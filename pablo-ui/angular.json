@@ -1,6 +1,47 @@
 {
   "version": 1,
   "projects": {
+    "carbon-tag-input": {
+      "projectType": "library",
+      "root": "libs/carbon-tag-input",
+      "sourceRoot": "libs/carbon-tag-input/src",
+      "prefix": "pablo-ui",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/carbon-tag-input"],
+          "options": {
+            "project": "libs/carbon-tag-input/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/carbon-tag-input/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/carbon-tag-input/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/carbon-tag-input"],
+          "options": {
+            "jestConfig": "libs/carbon-tag-input/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/carbon-tag-input/src/**/*.ts",
+              "libs/carbon-tag-input/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "pablo-ui-utils": {
       "projectType": "application",
       "root": "apps/pablo-ui-utils",

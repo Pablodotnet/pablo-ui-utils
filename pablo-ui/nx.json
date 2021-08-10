@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "carbon-tag-input": {
+      "tags": []
+    },
     "pablo-ui-utils": {
       "tags": []
     },
